@@ -4,7 +4,7 @@ import (
 	"seele/token"
 )
 
-// 词法分析器
+// Lexer 词法分析器
 // 词法分析器讲源代码解析为对应的词法单元
 type Lexer struct {
 	input        string
@@ -113,6 +113,14 @@ func (l *Lexer) readNumber() string {
 		l.readChar()
 	}
 	return l.input[position:l.position]
+}
+
+func (l *Lexer) peerChar() byte {
+	if l.readPosition >= len(l.input) {
+		return 0
+	} else {
+		return l.input[l.readPosition]
+	}
 }
 
 func isDigit(ch byte) bool {
