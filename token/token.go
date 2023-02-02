@@ -50,6 +50,8 @@ const (
 	ASTERISK = "*"
 	SLASH    = "/"
 	BANG     = "!"
+	EQ       = "=="
+	NOT_EQ   = "!="
 
 	GT = ">"
 	LT = "<"
